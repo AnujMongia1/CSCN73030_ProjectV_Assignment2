@@ -34,7 +34,7 @@ int main() {
 			string firstname;
 			iss >> firstname;
 
-			cout << "firstname: " << firstname << " lastname: " << lastname << endl;
+
 			struct STUDENT_DATA student;
 			student.firstName = firstname;
 			student.lastName = lastname;
@@ -43,6 +43,13 @@ int main() {
 		}
 		file.close();
 	}
+	
+#ifdef _DEBUG
 
+	for (int i = 0; i < students.size(); i++) {
+		cout << "firstname: " << students.at(i).firstName << " lastname: " << students.at(i).lastName << endl;
+	}
+
+#endif
 	return 1;
 }
